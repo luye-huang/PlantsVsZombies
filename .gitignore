@@ -1,0 +1,7 @@
+/dist/*
+/temp/*
+/.idea/*
+/node_modules/*
+/src/bundle.js
+npm-debug.log
+DS_Store*
