@@ -18,7 +18,7 @@ export default class New extends Component{
       <div>
         <input type='tel' name='val1' onKeyUp={this.changeValue}/>+
         <input type='tel' name='val2' onKeyUp={this.changeValue}/>=
-        <span>{this.store.sum}</span>
+        <span>{this.store.inputValue1}</span>
       </div>
     )
   }

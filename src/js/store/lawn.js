@@ -3,6 +3,13 @@
  */
 import {observable, action} from 'mobx';
 export default class lawnStore{
-
-
+  @observable zombies;
+  @observable aa;
+  constructor(){
+    this.aa = 0;
+    this.zombies = []
+  }
+  // @action get num(){
+  //
+  // }
 }
