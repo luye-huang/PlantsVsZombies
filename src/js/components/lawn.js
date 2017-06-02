@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import {observer,inject} from "mobx-react";
+// import Channel from './channel';
 @inject(['lawnStore']) @observer
 export default class Lawn extends React.Component{
   constructor(props){
@@ -10,6 +11,12 @@ export default class Lawn extends React.Component{
     this.store = this.props.lawnStore;
   }
   render(){
-    return(<div>lawn</div>);
+    const lawnStyle ={
+      ground:{
+        backgroundColor: 'green',
+        height: '100%'
+      }
+    }
+    return(<div style={lawnStyle.ground}>lawn</div>);
   }
 }
