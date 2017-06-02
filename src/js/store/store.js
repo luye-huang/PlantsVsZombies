@@ -4,9 +4,11 @@
 import NewStore from "./new.js";
 import LawnStore from './lawn';
 import ChannelStore from './channel';
+import ZombieStore from './zombie';
 
 export default {
   newStore:new NewStore(),
   lawnStore: new LawnStore(),
-  channelStore: new ChannelStore()
+  channelStore: new ChannelStore(),
+  zombieStore: new ZombieStore()
 }

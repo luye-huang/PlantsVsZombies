@@ -3,10 +3,13 @@
  */
 import React from 'react';
 import {inject, observer} from 'mobx-react';
+
 @inject(['channelStore']) @observer
+@inject(['lawnStore']) @observer
 export default class Channel extends React.Component{
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
+    this.store2 = this.props.lawnStore;
   }
   render(){
     const channelStyle = {
@@ -16,6 +19,6 @@ export default class Channel extends React.Component{
         height: '80px'
       }
     }
-    return(<div style={channelStyle.channel}>cc</div>);
+    return(<div style={channelStyle.channel}>{this.store2.zombies.length}</div>);
   }
 }

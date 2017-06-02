@@ -17,8 +17,10 @@ export default class Lawn extends React.Component{
         height: '100%'
       }
     }
+    console.log(this.store.zombies.length);
     return(<div style={lawnStyle.ground}>
-      <Channel>{this.store.aa}</Channel>
+      <Channel zombie = {this.store.zombies}>{this.store.zombies.length}</Channel>
+      <Channel zombie = {this.store.zombies}>{this.store.zombies.length}</Channel>
       lawn</div>);
   }
 }
