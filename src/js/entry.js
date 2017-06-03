@@ -7,13 +7,12 @@ import {Router, Route, hashHistory} from 'react-router';
 import Todo from './todo';
 import { Provider } from 'mobx-react';
 import store from './store/store';
-import New from './components/new';
 import Lawn from './components/lawn';
 // http://www.tuicool.com/articles/yYnmi26
 const routes = (
   <Route component={Entry}>
    
-    <Route path="/new" component={New}/>
+    {/*<Route path="/new" component={New}/>*/}
     
   </Route>
 );
@@ -26,7 +25,6 @@ export default class Entry extends React.Component{
       <Provider  {...store}>
         <div>
           <Lawn/>
-          <New>22</New>
         </div>
         
 

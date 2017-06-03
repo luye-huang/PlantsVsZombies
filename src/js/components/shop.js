@@ -7,6 +7,16 @@ export default class Sunlight extends React.Component{
     super();
   }
   render(){
-  
+    const shopStyle = {
+      shop:{
+        position: 'relative',
+        display:'inline-block',
+        backgroundColor: 'crimson',
+        width: '100px',
+        height:'300px',
+        top: '30px'
+      }
+    };
+    return (<div style={shopStyle.shop}>shop</div>);
   }
 }

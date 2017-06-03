@@ -6,6 +6,7 @@ import {observer,inject} from "mobx-react";
 import Shop from './shop';
 import SunlightBoard from './sunlight';
 import Energy from './energy';
+import Field from './field';
 import Channel from './channel';
 import Zombie from "./zombie";
 import Entry from "../entry";
@@ -19,7 +20,8 @@ export default class Lawn extends React.Component{
     const lawnStyle ={
       ground:{
         backgroundColor: 'green',
-        height: '100%'
+        height: '100%',
+        // paddingLeft: '100px'
       },
       zombie:{
       
@@ -29,7 +31,9 @@ export default class Lawn extends React.Component{
     // debugger
     return(<div style={lawnStyle.ground}>
       <SunlightBoard/>
+      <Shop/>
       <Energy/>
+      <Field></Field>
       {/*{*/}
         {/*this.store.zombies.map(()=>{return (<Zombie/>)})*/}
       {/*}*/}
