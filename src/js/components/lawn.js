@@ -3,8 +3,12 @@
  */
 import React from 'react';
 import {observer,inject} from "mobx-react";
+import Shop from './shop';
+import SunlightBoard from './sunlight';
+import Energy from './energy';
 import Channel from './channel';
 import Zombie from "./zombie";
+import Entry from "../entry";
 @inject(['lawnStore']) @observer
 export default class Lawn extends React.Component{
   constructor(props){
@@ -21,13 +25,15 @@ export default class Lawn extends React.Component{
       
       }
     }
-    const z = this.store.zombies.map((ele, index)=>{return (<Zombie index={index}/>)})
+    const zombies = this.store.zombies.map((ele, index)=>{return (<Zombie index={index}/>)})
     // debugger
     return(<div style={lawnStyle.ground}>
+      <SunlightBoard/>
+      <Energy/>
       {/*{*/}
         {/*this.store.zombies.map(()=>{return (<Zombie/>)})*/}
       {/*}*/}
-      {z}
+      {zombies}
       <Channel>{this.store.zombies.length}</Channel>
       <Channel zombies = {this.store.zombies}>{this.store.zombies.length}</Channel>
       lawn</div>);

@@ -5,7 +5,6 @@ import {observable, action} from 'mobx';
 export default class channelStore {
   @observable zombies;
   @observable timer;
-  
   constructor() {
     this.zombies = [];
     this.timer = 0;

@@ -2,21 +2,24 @@
  * Created by luye on 2017/6/1.
  */
 import {observable, action} from 'mobx';
-export default class lawnStore{
+export default class lawnStore {
   @observable zombies;
-  @observable aa;
-  constructor(){
-    this.aa = 0;
+  
+  constructor() {
     this.zombies = [];
-    // this.zombies.push(333);
-    setInterval(() => {
-      const y = Math.floor(Math.random()*5) * 100;
-      if(this.zombies.length<10){
-        this.zombies.push({type:0,x:0,y:y,hp:100})
+    const creatingZombies = setInterval(() => {
+      const lane = Math.random() * 5;
+      const y = Math.floor(lane) * 100;
+      if (this.zombies.length < 10) {
+        this.zombies.push({type: 0, x: 0, y: y, lane: lane, hp: 100, alive: true})
       }
-    }, 2000);
-    setInterval(() => {this.zombies.forEach((zombie)=>zombie.x++)}, 300);
+    }, 3000);
+    const movingZombies = setInterval(() => {
+      this.zombies.forEach((zombie) => zombie.x++)
+    }, 200);
+    // const creatingLight =
   }
+  
   // @action get num(){
   //
   // }
