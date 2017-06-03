@@ -4,6 +4,7 @@
 import React from 'react';
 import {observer,inject} from "mobx-react";
 import Channel from './channel';
+import Zombie from "./zombie";
 @inject(['lawnStore']) @observer
 export default class Lawn extends React.Component{
   constructor(props){
@@ -15,12 +16,20 @@ export default class Lawn extends React.Component{
       ground:{
         backgroundColor: 'green',
         height: '100%'
+      },
+      zombie:{
+      
       }
     }
-    console.log(this.store.zombies.length);
+    const z = this.store.zombies.map((ele, index)=>{return (<Zombie index={index}/>)})
+    // debugger
     return(<div style={lawnStyle.ground}>
-      <Channel zombie = {this.store.zombies}>{this.store.zombies.length}</Channel>
-      <Channel zombie = {this.store.zombies}>{this.store.zombies.length}</Channel>
+      {/*{*/}
+        {/*this.store.zombies.map(()=>{return (<Zombie/>)})*/}
+      {/*}*/}
+      {z}
+      <Channel>{this.store.zombies.length}</Channel>
+      <Channel zombies = {this.store.zombies}>{this.store.zombies.length}</Channel>
       lawn</div>);
   }
 }

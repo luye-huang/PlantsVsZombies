@@ -25,7 +25,7 @@ export default class Channel extends React.Component{
       }
     }
     return(<div style={channelStyle.channel}>{this.store2.zombies.length}{this.store1.timer}
-      <Zombie/>
+      {/*<Zombie/>*/}
     </div>);
   }
 }
