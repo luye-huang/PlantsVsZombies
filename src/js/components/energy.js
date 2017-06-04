@@ -13,15 +13,7 @@ export default class Energy extends React.Component{
     this.pick = this.energyStore.pick.bind(this.energyStore);
   }
   
-  // pick(){
-  //   debugger
-  //   this.sunlightStore.pick.call(this.sunlightStore);
-  //   this.energyStore.pick.call(this.energyStore);
-  // }
-  //
   render(){
-    // const lightStyle
-    console.log('energy');
     lightStyle.light.left = this.energyStore.x + 'px';
     lightStyle.light.top = this.energyStore.y + 'px';
     lightStyle.light.display = this.energyStore.display;

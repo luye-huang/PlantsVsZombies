@@ -13,7 +13,4 @@ export default class zombieStore{
     this.type = 1;
    
   }
-  // @action get num(){
-  //
-  // }
 }

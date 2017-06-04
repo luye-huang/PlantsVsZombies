@@ -17,7 +17,6 @@ export default class Channel extends React.Component{
     let timer = 0;
     const channelStyle = {
       channel:{
-        // position: 'absolute',
         backgroundColor: 'yellow',
         width: '100%',
         height: '80px',
@@ -25,7 +24,6 @@ export default class Channel extends React.Component{
       }
     }
     return(<div style={channelStyle.channel}>{this.store2.zombies.length}{this.store1.timer}
-      {/*<Zombie/>*/}
     </div>);
   }
 }

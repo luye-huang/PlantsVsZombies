@@ -5,13 +5,9 @@ import React from 'react';
 export default class Bullet extends React.Component {
   constructor() {
     super();
-    // this.state = {
-    //   x : this.props.x,
-    // }
   }
   
   render() {
-    // const {}
     const bulletStyle = {
       bullet: {
         position: 'absolute',
