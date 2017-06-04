@@ -2,6 +2,7 @@
  * Created by luye on 2017/6/3.
  */
 import React from 'react';
+import BeanShooter from './plantBeanShooter';
 export default class Sunlight extends React.Component{
   constructor(){
     super();
@@ -17,6 +18,8 @@ export default class Sunlight extends React.Component{
         top: '30px'
       }
     };
-    return (<div style={shopStyle.shop}>shop</div>);
+    return (<div style={shopStyle.shop}>
+      <BeanShooter/>
+      shop</div>);
   }
 }

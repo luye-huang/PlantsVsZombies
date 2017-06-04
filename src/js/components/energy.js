@@ -34,6 +34,7 @@ export const lightStyle = {
     position: 'absolute',
     left: '50px',
     width:'30px',
-    height: '30px'
+    height: '30px',
+    zIndex: '200'
   }
 }

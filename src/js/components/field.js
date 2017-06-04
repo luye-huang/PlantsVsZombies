@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import {observer, inject} from 'mobx-react';
+import Pit from './pit';
 
 export default class Field extends React.Component{
   constructor(){
@@ -12,12 +13,16 @@ export default class Field extends React.Component{
     const fieldStyle = {
       field:{
         position:'absolute',
+        display: 'flex',
+        flexFlow: 'row wrap',
         top: '10px',
         left: '110px',
-        width: '100%',
-        height: '100%'
+        width: '50%',
+        height: '90%',
+        padding: '10px 10px 20px'
       }
     };
-    return(<div style={fieldStyle.field}>field</div>);
+    const pits = (new Array(25)).fill(2).map((item)=>{return <Pit/>});
+    return(<div style={fieldStyle.field}>{pits}field</div>);
   }
 }
