@@ -3,6 +3,8 @@
  */
 import React from 'react';
 import {observer, inject} from 'mobx-react';
+import Bullet from './bullet';
+@inject(['bulletsStore'])
 @inject(['dragStore'])
 @inject(['pitStore']) @observer
 export default class Pit extends React.Component{
@@ -25,6 +27,9 @@ export default class Pit extends React.Component{
         margin: '10px'
       }
     };
-    return(<div style={pitStyle.pit} onDrop={this.dropStart} onDragOver={this.allowDrop}><div>pit</div></div>);
+    return(<div style={pitStyle.pit} onDrop={this.dropStart} onDragOver={this.allowDrop}>
+      <div>pit{this.props.lane}</div>
+      {/*{this.dragStore.fire?(<Bullet/>):null}*/}
+    </div>);
   }
 }

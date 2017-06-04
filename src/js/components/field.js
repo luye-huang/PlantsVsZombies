@@ -3,16 +3,23 @@
  */
 import React from 'react';
 import {observer, inject} from 'mobx-react';
+import Bullet from './bullet';
 import Pit from './pit';
-
-export default class Field extends React.Component{
-  constructor(){
-    super();
+@inject(['bulletsStore']) @observer
+export default class Field extends React.Component {
+  constructor(props) {
+    super(props);
+    this.bulletsStore = this.props.bulletsStore;
   }
-  render(){
+  
+  render() {
+    console.log('here');
+    const bullets = this.bulletsStore.bullets.map((bullet) => {
+      return (<Bullet x={bullet.x} y={bullet.y}/>)
+    });
     const fieldStyle = {
-      field:{
-        position:'absolute',
+      field: {
+        position: 'absolute',
         display: 'flex',
         flexFlow: 'row wrap',
         top: '10px',
@@ -22,7 +29,9 @@ export default class Field extends React.Component{
         padding: '10px 10px 20px'
       }
     };
-    const pits = (new Array(25)).fill(2).map((item)=>{return <Pit/>});
-    return(<div style={fieldStyle.field}>{pits}field</div>);
+    const pits = (new Array(25)).fill(2).map((item, index) => {
+      return <Pit index={index} lane={Math.floor(index / 5)}/>
+    });
+    return (<div style={fieldStyle.field}>{pits}field{bullets}</div>);
   }
 }

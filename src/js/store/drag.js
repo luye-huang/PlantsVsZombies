@@ -3,14 +3,18 @@
  */
 import {observable, action} from 'mobx';
 export default class Drag{
-  // @observable ele
+  @observable bullets;
+  @observable fire;
+  @observable index;
   constructor(){
     this.ele = 'w';
+    // this.bullets = [];
+    // this.fire = false;
+    // this.index = 0;
   }
   
   @action dragStart(event){
     this.ele = event.target;
-    console.log(event.target);
   }
   
   @action allowDrop(event){
@@ -19,6 +23,9 @@ export default class Drag{
   
   @action dropStart(event){
     event.target.appendChild(this.ele);
+    // console.log(event.clientX);
+    // console.log(index);
+    // this.fire = true;
   }
   
   @action dropEnd(event){

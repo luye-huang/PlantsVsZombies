@@ -1,6 +1,8 @@
 /**
  * Created by luye on 2017/5/27.
  */
+import BeanShooterStore from './plantBeanShooter';
+import BulletsStore from './bullets';
 import ChannelStore from './channel';
 import DragStore from './drag';
 import EnergyStore from './energy';
@@ -11,6 +13,8 @@ import SunlightStore from './sunlight';
 import ZombieStore from './zombie';
 
 export default {
+  beanShooterStore: new BeanShooterStore(),
+  bulletsStore: new BulletsStore(),
   lawnStore: new LawnStore(),
   channelStore: new ChannelStore(),
   dragStore: new DragStore(),
