@@ -5,6 +5,7 @@ import React from 'react';
 import {observer, inject} from 'mobx-react';
 import Bullet from './bullet';
 import Pit from './pit';
+import {SHOOTING_RANGE} from '../config/layout';
 @inject(['bulletsStore']) @observer
 export default class Field extends React.Component {
   constructor(props) {
@@ -13,8 +14,8 @@ export default class Field extends React.Component {
   }
   
   render() {
-    console.log('here');
-    const bullets = this.bulletsStore.bullets.map((bullet) => {
+    console.log(SHOOTING_RANGE);
+    const bullets = this.bulletsStore.bullets.filter((bullet)=>bullet.x<SHOOTING_RANGE).map((bullet) => {
       return (<Bullet x={bullet.x} y={bullet.y}/>)
     });
     const fieldStyle = {
@@ -24,7 +25,7 @@ export default class Field extends React.Component {
         flexFlow: 'row wrap',
         top: '10px',
         left: '110px',
-        width: '50%',
+        width: '400px',
         height: '90%',
         padding: '10px 10px 20px'
       }

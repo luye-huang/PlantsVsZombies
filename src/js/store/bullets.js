@@ -13,10 +13,11 @@ export default class Bullets {
   }
   
   @action fire(event) {
-    debugger
+    // debugger
     const x = event.clientX, y = event.clientY;
+    this.energy.deposit -= this.price;
     const firingBullets = setInterval(() => {
-      this.bullets.push({x: x, y: y});
-    }, 4000);
+      this.bullets.bullets.push({x: x, y: y});
+    }, 5000);
   }
 }

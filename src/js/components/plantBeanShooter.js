@@ -3,17 +3,19 @@
  */
 import React from 'react';
 import {inject, observer} from 'mobx-react';
-import {BEAN_SHOOTER} from '../config/pricing';
+import {BEAN_SHOOTER} from '../config/plantsInfo';
 @inject(['bulletsStore']) @observer
 @inject(['dragStore']) @observer
 @inject(['energyStore']) @observer
 export default class BeanShooter extends React.Component{
   constructor(props){
     super(props);
+    this.bulletsStore = this.props.bulletsStore;
     this.dragStore = this.props.dragStore;
     this.energyStore = this.props.energyStore;
     this.dragStart = this.dragStore.dragStart.bind(this.dragStore);
-    this.fire = this.props.bulletsStore.fire.bind(this.props.bulletsStore);
+    // inter-store data calculation and component-store param sent
+    this.fire = this.props.bulletsStore.fire.bind({bullets:this.bulletsStore, energy:this.energyStore, price: BEAN_SHOOTER.price});
   }
   // dropped(){
   //   this.props.bulletsStore.fire();
@@ -26,6 +28,6 @@ export default class BeanShooter extends React.Component{
         backgroundColor:'green'
       }
     }
-    return(<div style={beanShooterStyle.beanShooter} draggable={this.energyStore.deposit>=BEAN_SHOOTER?true:false} onDragStart={this.dragStart} onDragEnd={this.fire}>beanshooter</div>)
+    return(<div style={beanShooterStyle.beanShooter} draggable={this.energyStore.deposit>=BEAN_SHOOTER.price?true:false} onDragStart={this.dragStart} onDragEnd={this.fire}>beanshooter</div>)
   }
 }

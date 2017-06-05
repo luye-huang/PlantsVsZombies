@@ -4,8 +4,8 @@
 import React from 'react';
 import {observer, inject} from 'mobx-react';
 import Bullet from './bullet';
-@inject(['bulletsStore'])
-@inject(['dragStore'])
+@inject(['bulletsStore']) @observer
+@inject(['dragStore']) @observer
 @inject(['pitStore']) @observer
 export default class Pit extends React.Component{
   constructor(props){
