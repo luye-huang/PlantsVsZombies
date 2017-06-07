@@ -3,6 +3,7 @@
  */
 import React from 'react';
 import {inject, observer} from 'mobx-react';
+import {ZOMBIE_TOP_OFFSET} from '../config/layout';
 
 @inject(['channelStore']) @observer
 @inject(['lawnStore']) @observer
@@ -25,8 +26,8 @@ export default class Zombie extends React.Component{
         top: '0px'
       }
     }
-    zombieStyle.channel.right = this.lawnStore.zombies[this.props.index].x + 'px';
-    zombieStyle.channel.top = this.lawnStore.zombies[this.props.index].y + 'px';
-    return(<div style={zombieStyle.channel}>zombie {this.props.index}</div>);
+    zombieStyle.channel.left = this.lawnStore.zombies[this.props.index].x - 20 + 'px';
+    zombieStyle.channel.top = this.lawnStore.zombies[this.props.index].y + ZOMBIE_TOP_OFFSET + 'px';
+    return(<div style={zombieStyle.channel}>zombie {this.props.index} ** {this.props.lane}</div>);
   }
 }

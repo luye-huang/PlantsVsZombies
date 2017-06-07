@@ -22,21 +22,15 @@ export default class Lawn extends React.Component{
         backgroundColor: 'green',
         height: '100%',
         // paddingLeft: '100px'
-      },
-      zombie:{
-      
       }
     }
-    const zombies = this.store.zombies.map((ele, index)=>{return (<Zombie index={index}/>)})
+    const zombies = this.store.zombies.map((ele, index)=>{return (<Zombie index={index} lane={ele.lane}/>)})
     // debugger
     return(<div style={lawnStyle.ground}>
       <SunlightBoard/>
       <Shop/>
       <Energy/>
       <Field></Field>
-      {/*{*/}
-        {/*this.store.zombies.map(()=>{return (<Zombie/>)})*/}
-      {/*}*/}
       {zombies}
       <Channel>{this.store.zombies.length}</Channel>
       <Channel zombies = {this.store.zombies}>{this.store.zombies.length}</Channel>

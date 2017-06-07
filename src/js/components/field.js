@@ -12,10 +12,11 @@ export default class Field extends React.Component {
     super(props);
     this.bulletsStore = this.props.bulletsStore;
   }
-  
+
   render() {
     console.log(SHOOTING_RANGE);
-    const bullets = this.bulletsStore.bullets.filter((bullet)=>bullet.x<SHOOTING_RANGE).map((bullet) => {
+    let bullets = this.bulletsStore.bullets.filter((bullet)=>bullet.x < SHOOTING_RANGE && bullet.finished != true);
+    bullets = bullets.map((bullet) => {
       return (<Bullet x={bullet.x} y={bullet.y}/>)
     });
     const fieldStyle = {

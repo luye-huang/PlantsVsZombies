@@ -20,6 +20,7 @@ export default class Sunlight extends React.Component{
     };
     return (<div style={shopStyle.shop}>
       <BeanShooter/>
+      <BeanShooter/>
       shop</div>);
   }
 }

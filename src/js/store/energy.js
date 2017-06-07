@@ -8,7 +8,7 @@ export default class Energy {
   @observable x;
   @observable y;
   constructor() {
-    this.deposit = 0;
+    this.deposit = 200;
     this.x = 100 + Math.random() * 100;
     this.y = 100 + Math.random() * 100;
   }
