@@ -5,7 +5,6 @@ import React from 'react';
 import {inject, observer} from 'mobx-react';
 import Zombie from './zombie';
 
-@inject(['channelStore']) @observer
 @inject(['lawnStore']) @observer
 export default class Channel extends React.Component{
   constructor(props){

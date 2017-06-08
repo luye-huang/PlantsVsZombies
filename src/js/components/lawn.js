@@ -32,8 +32,6 @@ export default class Lawn extends React.Component{
       <Energy/>
       <Field></Field>
       {zombies}
-      <Channel>{this.store.zombies.length}</Channel>
-      <Channel zombies = {this.store.zombies}>{this.store.zombies.length}</Channel>
       lawn</div>);
   }
 }

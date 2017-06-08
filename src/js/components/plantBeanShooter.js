@@ -17,9 +17,6 @@ export default class BeanShooter extends React.Component{
     // inter-store data calculation and component-store param sent
     this.fire = this.props.bulletsStore.fire.bind({bullets:this.bulletsStore, energy:this.energyStore, price: BEAN_SHOOTER.price});
   }
-  // dropped(){
-  //   this.props.bulletsStore.fire();
-  // }
   render(){
     const beanShooterStyle = {
       beanShooter:{

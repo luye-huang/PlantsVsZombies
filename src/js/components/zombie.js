@@ -5,15 +5,11 @@ import React from 'react';
 import {inject, observer} from 'mobx-react';
 import {ZOMBIE_TOP_OFFSET} from '../config/layout';
 
-@inject(['channelStore']) @observer
 @inject(['lawnStore']) @observer
-@inject(['zombieStore']) @observer
 export default class Zombie extends React.Component{
   constructor(props){
     super(props);
     this.lawnStore = this.props.lawnStore;
-    this.store1 = this.props.channelStore;
-    this.store2 = this.props.zombieStore;
   }
   render(){
     const zombieStyle = {
