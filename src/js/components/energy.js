@@ -4,7 +4,6 @@
 import React from 'react';
 import {observer, inject} from 'mobx-react';
 @inject(['energyStore']) @observer
-@inject(['sunlightStore']) @observer
 export default class Energy extends React.Component{
   constructor(props){
     super(props);

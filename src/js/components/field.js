@@ -6,16 +6,16 @@ import {observer, inject} from 'mobx-react';
 import Bullet from './bullet';
 import Pit from './pit';
 import {SHOOTING_RANGE} from '../config/layout';
-@inject(['bulletsStore']) @observer
+@inject(['lawnStore']) @observer
 export default class Field extends React.Component {
   constructor(props) {
     super(props);
-    this.bulletsStore = this.props.bulletsStore;
+    this.lawnStore = this.props.lawnStore;
   }
 
   render() {
     console.log(SHOOTING_RANGE);
-    let bullets = this.bulletsStore.bullets.filter((bullet)=>bullet.x < SHOOTING_RANGE && bullet.finished != true);
+    let bullets = this.lawnStore.bullets.filter((bullet)=>bullet.x < SHOOTING_RANGE && bullet.finished != true);
     bullets = bullets.map((bullet) => {
       return (<Bullet x={bullet.x} y={bullet.y}/>)
     });

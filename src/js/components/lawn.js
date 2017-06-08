@@ -7,9 +7,7 @@ import Shop from './shop';
 import SunlightBoard from './sunlight';
 import Energy from './energy';
 import Field from './field';
-import Channel from './channel';
 import Zombie from "./zombie";
-import Entry from "../entry";
 @inject(['lawnStore']) @observer
 export default class Lawn extends React.Component{
   constructor(props){
@@ -21,11 +19,9 @@ export default class Lawn extends React.Component{
       ground:{
         backgroundColor: 'green',
         height: '100%',
-        // paddingLeft: '100px'
       }
     }
     const zombies = this.store.zombies.map((ele, index)=>{return (<Zombie index={index} lane={ele.lane}/>)})
-    // debugger
     return(<div style={lawnStyle.ground}>
       <SunlightBoard/>
       <Shop/>

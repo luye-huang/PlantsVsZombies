@@ -4,15 +4,14 @@
 import React from 'react';
 import {observer, inject} from 'mobx-react';
 import Bullet from './bullet';
-@inject(['bulletsStore']) @observer
-@inject(['dragStore']) @observer
+@inject(['energyStore']) @observer
 export default class Pit extends React.Component{
   constructor(props){
     super(props);
-    this.dragStore = this.props.dragStore;
-    this.allowDrop = this.dragStore.allowDrop;
-    this.dropStart = this.dragStore.dropStart.bind(this.dragStore);
-    this.dropEnd = this.dragStore.dropEnd;
+    this.energyStore = this.props.energyStore;
+    this.allowDrop = this.energyStore.allowDrop;
+    this.dropStart = this.energyStore.dropStart.bind(this.energyStore);
+    this.dropEnd = this.energyStore.dropEnd;
   }
   render(){
     const pitStyle = {

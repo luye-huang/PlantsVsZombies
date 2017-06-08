@@ -3,12 +3,10 @@
  */
 import React from 'react';
 import {inject, observer} from 'mobx-react';
-@inject(['sunlightStore']) @observer
 @inject(['energyStore']) @observer
 export default class Sunlight extends React.Component{
   constructor(props){
     super(props);
-    this.sunlightStore = this.props.sunlightStore;
     this.energyStore = this.props.energyStore;
   }
   render(){
