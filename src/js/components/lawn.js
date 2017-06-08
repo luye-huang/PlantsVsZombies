@@ -21,7 +21,7 @@ export default class Lawn extends React.Component{
         height: '100%',
       }
     }
-    const zombies = this.store.zombies.map((ele, index)=>{return (<Zombie index={index} lane={ele.lane}/>)})
+    const zombies = this.store.zombies.map((ele, index)=>{return (<Zombie index={index} hp={ele.hp} lane={ele.lane}/>)})
     return(<div style={lawnStyle.ground}>
       <SunlightBoard/>
       <Shop/>

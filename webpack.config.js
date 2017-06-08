@@ -49,7 +49,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.resolve(__dirname, "dist"),
-    port: 7007,
+    port: 7000,
     hot: true
   },
   plugins: [

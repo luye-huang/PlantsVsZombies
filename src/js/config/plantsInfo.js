@@ -3,5 +3,6 @@
  */
 export const BEAN_SHOOTER ={
   price: 25,
+  power: 25,
   range: window.document.body.clientWidth - 500
 }

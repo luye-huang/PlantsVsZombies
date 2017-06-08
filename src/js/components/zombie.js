@@ -24,6 +24,6 @@ export default class Zombie extends React.Component{
     }
     zombieStyle.channel.left = this.lawnStore.zombies[this.props.index].x - 20 + 'px';
     zombieStyle.channel.top = this.lawnStore.zombies[this.props.index].y + ZOMBIE_TOP_OFFSET + 'px';
-    return(<div style={zombieStyle.channel}>zombie {this.props.index} ** {this.props.lane}</div>);
+    return(<div style={zombieStyle.channel}>zombie {this.props.hp} ** {this.props.lane}</div>);
   }
 }
