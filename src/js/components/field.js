@@ -15,7 +15,7 @@ export default class Field extends React.Component {
 
   render() {
     console.log(SHOOTING_RANGE);
-    let bullets = this.lawnStore.bullets.filter((bullet)=>bullet.x < SHOOTING_RANGE && bullet.finished != true);
+    let bullets = this.lawnStore.bullets.filter((bullet)=>bullet.x < SHOOTING_RANGE && bullet.active);
     bullets = bullets.map((bullet) => {
       return (<Bullet x={bullet.x} y={bullet.y}/>)
     });
